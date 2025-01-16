@@ -24,7 +24,9 @@ def build_sample_image():
         img = np.ones((50, 50, 3), dtype="uint8") * tone
         result = np.concatenate((result, img), axis=1)
 
-    return result
+    resultf = result.astype(np.uint8)
+
+    return resultf
 
 
 def show_img_with_matplotlib(color_img, title, pos):
