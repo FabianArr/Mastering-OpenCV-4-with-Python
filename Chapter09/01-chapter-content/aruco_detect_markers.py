@@ -6,10 +6,10 @@ This script detects markers using Aruco from the webcam
 import cv2
 
 # We create the dictionary object:
-aruco_dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_7X7_250)
+aruco_dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_7X7_250)
 
 # We create the parameters object:
-parameters = cv2.aruco.DetectorParameters_create()
+parameters = cv2.aruco.DetectorParameters()
 
 # Create video capture object 'capture' to be used to capture frames from the first connected camera:
 capture = cv2.VideoCapture(0)
