@@ -108,7 +108,7 @@ cv2.rectangle(boundingRect_image, (x, y), (x + w, y + h), (0, 255, 0), 5)
 # 2. cv2.minAreaRect():
 rotated_rect = cv2.minAreaRect(contours[0])
 box = cv2.boxPoints(rotated_rect)
-box = np.int0(box)
+box = np.int32(box)
 cv2.polylines(minAreaRect_image, [box], True, (0, 0, 255), 5)
 
 # 3. cv2.minEnclosingCircle():
