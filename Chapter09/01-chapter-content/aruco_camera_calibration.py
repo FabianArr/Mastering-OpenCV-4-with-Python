@@ -9,11 +9,13 @@ import numpy as np
 import pickle
 
 # Create dictionary and board object:
-dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_7X7_250)
-board = cv2.aruco.CharucoBoard_create(3, 3, .025, .0125, dictionary)
+#dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_7X7_250)
+dictionary = cv2.aruco.getPredefinedDictionary (cv2.aruco.DICT_7X7_250)
+board = cv2.aruco.CharucoBoard( (3, 3), .025, .0125, dictionary)
 
 # Create board image to be used in the calibration process:
-image_board = board.draw((200 * 3, 200 * 3))
+#image_board = board.draw((200 * 3, 200 * 3))
+image_board = board.generateImage ((200 * 3, 200 * 3))
 
 # Write calibration board image:
 cv2.imwrite('charuco.png', image_board)
